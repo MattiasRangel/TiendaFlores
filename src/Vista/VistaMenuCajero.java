@@ -15,13 +15,13 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class Vista11 extends javax.swing.JFrame {
+public class VistaMenuCajero extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista11
+     * Creates new form VistaMenuCajero
      */
     Controlador control;
-    public Vista11() {
+    public VistaMenuCajero() {
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -157,13 +157,13 @@ public class Vista11 extends javax.swing.JFrame {
     }//GEN-LAST:event_equisMouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Vista16 meth = new Vista16();
+        VistaVentasDelDiaCajero meth = new VistaVentasDelDiaCajero();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Vista2 meth = new Vista2();
+        VistaLogin meth = new VistaLogin();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -172,7 +172,7 @@ public class Vista11 extends javax.swing.JFrame {
         if (TiendaRosas.listaClientes.isEmpty()){
             JOptionPane.showMessageDialog(null, "No puedes ingresar hasta que registres el cliente");
         } else{
-        Vista6 meth = new Vista6();
+        VistaNuevaVenta meth = new VistaNuevaVenta();
         meth.setVisible(true);
         setVisible(false);
         }
@@ -180,13 +180,13 @@ public class Vista11 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Vista13 meth = new Vista13();
+        VistaBuscarClienteCajero meth = new VistaBuscarClienteCajero();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Vista12 meth = new Vista12();
+        VistaRegistrarCliente meth = new VistaRegistrarCliente();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -208,20 +208,20 @@ public class Vista11 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaMenuCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaMenuCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaMenuCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaMenuCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Vista11().setVisible(true);
+                //new VistaMenuCajero().setVisible(true);
             }
         });
     }

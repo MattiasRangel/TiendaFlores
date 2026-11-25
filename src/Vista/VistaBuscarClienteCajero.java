@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Controlador;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -13,12 +14,12 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class Vista15 extends javax.swing.JFrame {
+public class VistaBuscarClienteCajero extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista15
+     * Creates new form VistaBuscarClienteCajero
      */
-    public Vista15() {
+    public VistaBuscarClienteCajero() {
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -34,6 +35,7 @@ public class Vista15 extends javax.swing.JFrame {
         Image equis_medida = equisicon.getImage().getScaledInstance(anchox, altox, Image.SCALE_SMOOTH);
         ImageIcon equis_final = new ImageIcon(equis_medida);
         equis.setIcon(equis_final);
+
     }
 
     /**
@@ -46,14 +48,19 @@ public class Vista15 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         equis = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         letrero = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -62,16 +69,8 @@ public class Vista15 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
-        jButton1.setText("ENTREGAR");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, -1, -1));
+        jLabel4.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 860, 40));
 
         jPanel2.setBackground(java.awt.Color.pink);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,22 +86,27 @@ public class Vista15 extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 240, 750));
 
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
-        jLabel1.setText("FACTURA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 170, -1));
+        jLabel1.setText("BUSCAR");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 140, -1));
 
-        jLabel2.setText("AQUI SE MUESTRA EL PRODUCTO, EL TOTAL , LOS DATOS DEL CLIENTE, Y EL DESCUENTO SI ES FRECUENTE");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
+        jLabel2.setText("CLIENTE");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 150, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
-        jButton2.setText("VOLVER");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setFont(new java.awt.Font("TypoUpright BT", 1, 48)); // NOI18N
+        jLabel3.setText("N° Cedula:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+
+        jButton3.setBackground(new java.awt.Color(255, 204, 204));
+        jButton3.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
+        jButton3.setText("VOLVER");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,6 +114,33 @@ public class Vista15 extends javax.swing.JFrame {
 
         letrero.setText("jLabel1");
         jPanel1.add(letrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 300, 90));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 290, 20));
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 204));
+        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
+        jButton1.setText("BUSCAR");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 204, 204));
+        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 24)); // NOI18N
+        jButton2.setText("LIMPIAR");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, -1, -1));
+
+        jTextField1.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
+        jTextField1.setBorder(null);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 290, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 750));
 
@@ -121,16 +152,28 @@ public class Vista15 extends javax.swing.JFrame {
     }//GEN-LAST:event_equisMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Vista14 meth = new Vista14();
-        meth.setVisible(true);
-        setVisible(false);
+        jTextField1.setText("");
+        jLabel4.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, "Factura entregada correctamente");
-        Vista11 meth = new Vista11();
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        VistaMenuCajero meth = new VistaMenuCajero();
         meth.setVisible(true);
         setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String cedula = jTextField1.getText();
+
+        
+        if (cedula.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(null, "No se pueden dejar los campos vacios");
+        } 
+        
+        Controlador control = new Controlador();
+        
+        jLabel4.setText(control.verificar_ced(cedula));
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -150,20 +193,20 @@ public class Vista15 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista15.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista15.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista15.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista15.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Vista15().setVisible(true);
+                //new VistaBuscarClienteCajero().setVisible(true);
             }
         });
     }
@@ -172,11 +215,16 @@ public class Vista15 extends javax.swing.JFrame {
     private javax.swing.JLabel equis;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel letrero;
     // End of variables declaration//GEN-END:variables
 }

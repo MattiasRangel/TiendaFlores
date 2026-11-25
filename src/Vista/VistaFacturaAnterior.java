@@ -5,41 +5,35 @@
  */
 package Vista;
 
-import Controlador.Controlador;
-import Modelo.Producto;
-import Modelo.Rosa;
 import java.awt.Image;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Usuario
  */
-public class Vista8 extends javax.swing.JFrame {
+public class VistaFacturaAnterior extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista8
+     * Creates new form VistaFacturaAnterior
      */
-    public Vista8() {
+    public VistaFacturaAnterior() {
         initComponents();
         this.setLocationRelativeTo(null);
 
         ImageIcon equisicon = new ImageIcon("IMG/equis.jpeg");
-        int anchox = equis.getWidth();
-        int altox = equis.getHeight();
-        Image equis_medida = equisicon.getImage().getScaledInstance(anchox, altox, Image.SCALE_SMOOTH);
-        ImageIcon equis_final = new ImageIcon(equis_medida);
-        equis.setIcon(equis_final);
-
+       
         ImageIcon letreroicon = new ImageIcon("IMG/eterna.png");
         int ancho = letrero.getWidth();
         int alto = letrero.getHeight();
         Image letrero_medida = letreroicon.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
         ImageIcon letrero_final = new ImageIcon(letrero_medida);
-        letrero.setIcon(letrero_final);
-        
+        letrero.setIcon(letrero_final); int anchox = equis.getWidth();
+        int altox = equis.getHeight();
+        Image equis_medida = equisicon.getImage().getScaledInstance(anchox, altox, Image.SCALE_SMOOTH);
+        ImageIcon equis_final = new ImageIcon(equis_medida);
+        equis.setIcon(equis_final);
     }
 
     /**
@@ -52,15 +46,14 @@ public class Vista8 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         equis = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         letrero = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -68,6 +61,17 @@ public class Vista8 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 204));
+        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
+        jButton1.setText("ENTREGAR");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, -1, -1));
 
         jPanel2.setBackground(java.awt.Color.pink);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,19 +87,22 @@ public class Vista8 extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 240, 750));
 
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
-        jLabel1.setText("INVENTARIO");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 210, -1));
+        jLabel1.setText("FACTURA");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 170, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
-        jButton1.setText("VOLVER");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("AQUI SE MUESTRA EL PRODUCTO, EL TOTAL , LOS DATOS DEL CLIENTE, Y EL DESCUENTO SI ES FRECUENTE");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 204, 204));
+        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
+        jButton2.setText("VOLVER");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,38 +110,6 @@ public class Vista8 extends javax.swing.JFrame {
 
         letrero.setText("jLabel1");
         jPanel1.add(letrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 300, 90));
-
-        jScrollPane1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        jTable1.setBackground(new java.awt.Color(255, 204, 204));
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
-        jTable1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Precio", "Color", "Cantidad"
-            }
-        ));
-        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
-
-        jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
-        jButton2.setText("ACTUALIZAR");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 600, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 750));
 
@@ -145,43 +120,18 @@ public class Vista8 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_equisMouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        VistaNuevaVentaAnterior meth = new VistaNuevaVentaAnterior();
+        meth.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Vista3 meth = new Vista3();
+        JOptionPane.showMessageDialog(null, "Factura entregada correctamente");
+        VistaMenuCajero meth = new VistaMenuCajero();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
-    ArrayList<Producto> lista = Modelo.TiendaRosas.inventario;
-    Controlador meth = new Controlador();
-    
-
-    String[] columnas = {"Nombre", "Precio", "Color", "Cantidad"};
-    DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
-
-    for (Producto item : lista) {
-        
-        if (item instanceof Rosa){
-        
-        Rosa t = (Rosa) item;
-        Object[] fila = {
-            
-            t.getNombre(),
-            t.getPrecio(),
-            t.getColor(),
-            t.getCantidadStock()
-            
-        };
-        modelo.addRow(fila);
-    }
-    }
-
-    jTable1.setModel(modelo);
-
-
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,20 +150,20 @@ public class Vista8 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista8.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFacturaAnterior.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista8.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFacturaAnterior.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista8.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFacturaAnterior.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista8.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFacturaAnterior.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Vista8().setVisible(true);
+                //new VistaFacturaAnterior().setVisible(true);
             }
         });
     }
@@ -223,11 +173,10 @@ public class Vista8 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel letrero;
     // End of variables declaration//GEN-END:variables
 }

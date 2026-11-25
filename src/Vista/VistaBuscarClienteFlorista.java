@@ -6,7 +6,6 @@
 package Vista;
 
 import Controlador.Controlador;
-import Modelo.TiendaRosas;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -15,16 +14,15 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class Vista12 extends javax.swing.JFrame {
+public class VistaBuscarClienteFlorista extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista12
+     * Creates new form VistaBuscarClienteFlorista
      */
-    private Controlador control;
-    public Vista12() {
+    public VistaBuscarClienteFlorista() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
         ImageIcon equisicon = new ImageIcon("IMG/equis.jpeg");
         int anchox = equis.getWidth();
         int altox = equis.getHeight();
@@ -49,27 +47,39 @@ public class Vista12 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        equis = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        equis = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         letrero = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
+        jLabel1.setText("BUSCAR");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 140, -1));
+
+        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
+        jLabel2.setText("CLIENTE");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 150, -1));
+
+        jLabel3.setFont(new java.awt.Font("TypoUpright BT", 1, 48)); // NOI18N
+        jLabel3.setText("N° Cedula:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 860, 40));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,22 +96,6 @@ public class Vista12 extends javax.swing.JFrame {
         jPanel2.add(equis, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 60, 60));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 240, 750));
-
-        jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
-        jLabel1.setText("REGISTRAR");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 200, -1));
-
-        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
-        jLabel2.setText("CLIENTE");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 150, -1));
-
-        jLabel3.setFont(new java.awt.Font("TypoUpright BT", 1, 48)); // NOI18N
-        jLabel3.setText("Nombre Cliente:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("TypoUpright BT", 1, 48)); // NOI18N
-        jLabel4.setText("N° Cedula Cliente:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 204, 204));
         jButton3.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
@@ -120,48 +114,33 @@ public class Vista12 extends javax.swing.JFrame {
 
         letrero.setText("jLabel1");
         jPanel1.add(letrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 300, 90));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 290, 30));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 250, 30));
-
-        jTextField1.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 290, -1));
-
-        jTextField2.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
-        jTextField2.setBorder(null);
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 250, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 24)); // NOI18N
-        jButton1.setText("LIMPIAR");
+        jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
+        jButton1.setText("BUSCAR");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 420, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 290, 20));
+
+        jTextField1.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
+        jTextField1.setBorder(null);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 290, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
-        jButton2.setText("REGISTRAR");
+        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 24)); // NOI18N
+        jButton2.setText("LIMPIAR");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, -1, -1));
-
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setFont(new java.awt.Font("TypoUpright BT", 1, 48)); // NOI18N
-        jRadioButton1.setText("Cliente Frecuente");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 750));
 
@@ -173,48 +152,33 @@ public class Vista12 extends javax.swing.JFrame {
     }//GEN-LAST:event_equisMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String nombre = jTextField1.getText();
-        String cedula = jTextField2.getText();
-        Boolean frecuente = jRadioButton1.isSelected();
-
-        TiendaRosas in = new TiendaRosas();
-        
-        
-        if (nombre.equalsIgnoreCase("") || cedula.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(null, "No se pueden dejar los campos vacios");
-        } else {
-        
-            
-        control = new Controlador();
-        
-        if (in.buscarClientePorCedula(cedula) != null) {
-            JOptionPane.showMessageDialog(null, "Error: Ya existe un cliente registrado con la cédula " + cedula + ".");
-        } else {
-            control.llenar_cliente(nombre, cedula, frecuente);
-            
-            JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
-            Vista11 meth = new Vista11();
-            meth.setVisible(true);
-            setVisible(false);
-        }
-        }
-        
+        jTextField1.setText("");
+        jLabel4.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextField1.setText("");
-        jTextField2.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Vista11 meth = new Vista11();
+        VistaMenuFlorista meth = new VistaMenuFlorista();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String cedula = jTextField1.getText();
+
+        Controlador control = new Controlador();
+        
+        if (cedula.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(null, "No se pueden dejar los campos vacios");
+        }else{
+            jLabel4.setText(control.verificar_ced(cedula));
+        }
+        
+         
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,20 +197,20 @@ public class Vista12 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteFlorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteFlorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteFlorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBuscarClienteFlorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Vista12().setVisible(true);
+                //new VistaBuscarClienteFlorista().setVisible(true);
             }
         });
     }
@@ -263,11 +227,8 @@ public class Vista12 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel letrero;
     // End of variables declaration//GEN-END:variables
 }

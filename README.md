@@ -23,9 +23,17 @@ src/
 │   ├── Venta, DetalleVenta, VentaResumen
 │   └── TiendaRosas                               (almacén central de datos)
 ├── Controlador/   Controlador entre vistas y modelo
-├── Vista/         16 pantallas Swing (formularios de NetBeans)
-└── taller3/       Clase principal (main)
+├── Vista/         Pantallas Swing (formularios de NetBeans)
+└── rosaeterna/    Clase principal RosaEterna (main)
 ```
+
+### Pantallas
+
+| Flujo | Vistas |
+|---|---|
+| Acceso | `VistaBienvenida`, `VistaLogin` |
+| Florista | `VistaMenuFlorista`, `VistaNuevoProducto`, `VistaBuscarClienteFlorista`, `VistaInventario`, `VistaVentasDelDiaFlorista` |
+| Cajero | `VistaMenuCajero`, `VistaRegistrarCliente`, `VistaBuscarClienteCajero`, `VistaNuevaVenta`, `VistaFactura`, `VistaVentasDelDiaCajero` |
 
 ## Tecnologías
 
@@ -34,7 +42,7 @@ Java · Java Swing · NetBeans (Ant) · POO · MVC
 ## Cómo ejecutarlo
 
 1. Abre el proyecto en **NetBeans** (incluye `build.xml` y `nbproject/`).
-2. Ejecuta la clase principal `taller3.Taller3`.
+2. Ejecuta la clase principal `rosaeterna.RosaEterna`.
 
 **Usuarios de prueba**
 
@@ -46,7 +54,7 @@ Java · Java Swing · NetBeans (Ant) · POO · MVC
 ## Limitaciones y próximas mejoras
 
 - Los datos se guardan en memoria (`ArrayList`) y se pierden al cerrar la aplicación. El siguiente paso es la persistencia con **MySQL o SQLite mediante JDBC**.
-- Renombrar las vistas (`Vista1`…`Vista16`) con nombres descriptivos (`LoginView`, `InventarioView`…).
+- `VistaNuevaVentaAnterior` y `VistaFacturaAnterior` son una versión previa del flujo de venta que ya no se usa; se pueden eliminar.
 
 ## Autor
 

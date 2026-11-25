@@ -12,12 +12,12 @@ import javax.swing.ImageIcon;
  *
  * @author Usuario
  */
-public class Vista1 extends javax.swing.JFrame {
+public class VistaBienvenida extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista1
+     * Creates new form VistaBienvenida
      */
-    public Vista1() {
+    public VistaBienvenida() {
         initComponents();
 
         this.setLocationRelativeTo(null);
@@ -132,7 +132,7 @@ public class Vista1 extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        Vista2 meth = new Vista2(); 
+        VistaLogin meth = new VistaLogin(); 
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -154,20 +154,20 @@ public class Vista1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBienvenida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBienvenida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBienvenida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaBienvenida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Vista1().setVisible(true);
+                //new VistaBienvenida().setVisible(true);
             }
         });
     }

@@ -16,14 +16,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Usuario
  */
-public class Vista16 extends javax.swing.JFrame {
+public class VistaVentasDelDiaCajero extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista16
+     * Creates new form VistaVentasDelDiaCajero
      */
     
     private Controlador control;
-    public Vista16() {
+    public VistaVentasDelDiaCajero() {
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -159,7 +159,7 @@ public class Vista16 extends javax.swing.JFrame {
     }//GEN-LAST:event_equisMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Vista11 meth = new Vista11();
+        VistaMenuCajero meth = new VistaMenuCajero();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -181,20 +181,20 @@ public class Vista16 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaVentasDelDiaCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaVentasDelDiaCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaVentasDelDiaCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista16.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaVentasDelDiaCajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Vista16().setVisible(true);
+                //new VistaVentasDelDiaCajero().setVisible(true);
             }
         });
     }

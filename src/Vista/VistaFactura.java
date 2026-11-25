@@ -5,25 +5,28 @@
  */
 package Vista;
 
-import Modelo.TiendaRosas;
-import Modelo.VentaResumen;
+import Controlador.Controlador;
 import java.awt.Image;
 import javax.swing.ImageIcon;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Usuario
  */
-public class Vista9 extends javax.swing.JFrame {
+public class VistaFactura extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista9
+     * Creates new form VistaFactura
      */
-    public Vista9() {
+    private Controlador control;
+    
+    public VistaFactura() {
+        
+        control = new Controlador();
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
         ImageIcon equisicon = new ImageIcon("IMG/equis.jpeg");
         int anchox = equis.getWidth();
         int altox = equis.getHeight();
@@ -38,28 +41,13 @@ public class Vista9 extends javax.swing.JFrame {
         ImageIcon letrero_final = new ImageIcon(letrero_medida);
         letrero.setIcon(letrero_final);
         
+        jLabel3.setText( control.clientefact());
+        
+        jTextArea1.setText( control.detalles_pro());
+        
+        jLabel5.setText( "Total de factura: "+ control.mostrar_total());
         
         
-        
-        
-        String[] columnas = {"Cliente", "Productos", "Total", "Fecha"};
-        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
-        
-        modelo.setRowCount(0); // limpia
-
-        for (VentaResumen v : TiendaRosas.listaVentas) {
-            modelo.addRow(new Object[]{
-                v.getCliente(),
-                v.getProductos(),
-                v.getTotal(),
-                v.getFecha()
-            });
-            
-            
-        }
-        jTable1.setModel(modelo);
-        
-    
     }
 
     /**
@@ -72,15 +60,17 @@ public class Vista9 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         equis = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         letrero = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -88,6 +78,21 @@ public class Vista9 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setBackground(new java.awt.Color(255, 204, 204));
+        jButton2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
+        jButton2.setText("ENTREGAR");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 860, 40));
 
         jPanel2.setBackground(java.awt.Color.pink);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,12 +108,8 @@ public class Vista9 extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 240, 750));
 
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
-        jLabel1.setText("VENTAS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 140, -1));
-
-        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 2, 48)); // NOI18N
-        jLabel2.setText("DEL DIA");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 140, -1));
+        jLabel1.setText("FACTURA");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 160, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 204, 204));
         jButton1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
@@ -128,24 +129,17 @@ public class Vista9 extends javax.swing.JFrame {
         letrero.setText("jLabel1");
         jPanel1.add(letrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 300, 90));
 
-        jTable1.setBackground(new java.awt.Color(255, 204, 204));
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
-        jTable1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
-        jScrollPane1.setViewportView(jTable1);
+        jLabel5.setFont(new java.awt.Font("SimSun-ExtB", 3, 36)); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 620, 40));
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, -1, -1));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 18)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 540, 200));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 750));
 
@@ -157,10 +151,21 @@ public class Vista9 extends javax.swing.JFrame {
     }//GEN-LAST:event_equisMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Vista3 meth = new Vista3();
+        VistaNuevaVenta meth = new VistaNuevaVenta();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        control.entregarFactura();
+        JOptionPane.showMessageDialog(null, "Factura entregada correctamente");
+        jTextArea1.setText("");
+        jLabel5.setText("0");
+        jLabel3.setText("");
+        VistaMenuCajero meth = new VistaMenuCajero();
+        meth.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,20 +184,20 @@ public class Vista9 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Vista9().setVisible(true);
+                //new VistaFactura().setVisible(true);
             }
         });
     }
@@ -200,13 +205,15 @@ public class Vista9 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel equis;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel letrero;
     // End of variables declaration//GEN-END:variables
 }

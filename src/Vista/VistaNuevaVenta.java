@@ -18,13 +18,13 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class Vista6 extends javax.swing.JFrame {
+public class VistaNuevaVenta extends javax.swing.JFrame {
 
     private Controlador control; 
     /**
-     * Creates new form Vista6
+     * Creates new form VistaNuevaVenta
      */
-    public Vista6() {
+    public VistaNuevaVenta() {
         
         new TiendaRosas().inicializarDatos();
         
@@ -217,7 +217,7 @@ public class Vista6 extends javax.swing.JFrame {
     }//GEN-LAST:event_equisMouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Vista11 meth = new Vista11();
+        VistaMenuCajero meth = new VistaMenuCajero();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -225,7 +225,7 @@ public class Vista6 extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         JOptionPane.showMessageDialog(this, control.generarFactura());
-        Vista7 meth = new Vista7();
+        VistaFactura meth = new VistaFactura();
         meth.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -291,20 +291,20 @@ public class Vista6 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vista6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaNuevaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vista6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaNuevaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vista6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaNuevaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vista6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaNuevaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Vista6().setVisible(true);
+                //new VistaNuevaVenta().setVisible(true);
             }
         });
     }
