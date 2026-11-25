@@ -18,7 +18,7 @@ public class Cliente extends Persona  {
     }
 
     
-    // Método clave para el Polimorfismo: Devuelve el subtotal sin descuento.
+    // Cliente normal: sin descuento
     public double calcularTotalConDescuento(double subtotal) {
         
         

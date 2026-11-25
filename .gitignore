@@ -1,0 +1,7 @@
+# Compilados y salidas de NetBeans / IntelliJ
+build/
+dist/
+out/
+nbproject/private/
+.idea/
+*.class

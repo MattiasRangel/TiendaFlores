@@ -25,7 +25,7 @@ public class TiendaRosas {
     
     public void inicializarDatos() {
         if(listaUsuarios.isEmpty()) {
-            // Polimorfismo: Guardamos Floristas y Cajeros en la misma lista de Usuarios
+            // Usuarios de prueba
             listaUsuarios.add(new Florista("Ana", "1092340557", "admin", "12345"));
             listaUsuarios.add(new Cajero("Luis", "1092340557", "cajero1", "1111"));
             inventario.add(new Rosa("Freedom x15", 25000, 120, "Roja", "Nacional"));
@@ -71,22 +71,20 @@ public class TiendaRosas {
 
     public  void llenarrosa(String nombre, String precioStr, String cantidadStockStr, String color, String origen){
     
-    // Manejo de errores de conversión: Siempre es mejor atrapar la excepción
     double pre;
     int cant;
     try {
         pre = Double.parseDouble(precioStr);
         cant = Integer.valueOf(cantidadStockStr);
     } catch (NumberFormatException e) {
-        // En un caso real, esto debería ser reportado al usuario
         System.err.println("Error de formato al registrar producto: " + e.getMessage());
         return; 
     }
     
-    // Creación del objeto Rosa (¡una sola vez!)
+    // Crear la rosa
     Rosa nuevaRosa = new Rosa(nombre, pre, cant, color, origen);
     
-    // Adición al ArrayList estático
+    // Agregar al inventario
     inventario.add(nuevaRosa);
 }
     

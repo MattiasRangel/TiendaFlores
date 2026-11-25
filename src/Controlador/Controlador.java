@@ -45,14 +45,14 @@ public class Controlador {
         if (usuarioEncontrado != null) {
             int rol = 0;
             
-            // Usamos 'instanceof' para determinar el rol (Herencia/Polimorfismo)
+            // Revisar el rol del usuario
             if (usuarioEncontrado instanceof Florista){
                 rol = 1; // Rol 1: Florista
             } else if (usuarioEncontrado instanceof Cajero){
                 rol = 2; // Rol 2: Cajero
             }
             
-            // Si el login fue exitoso, devolvemos el éxito y el rol.
+            // Login correcto
             return new ResultadoLogin(true, rol); 
             
         } else {
